@@ -1,0 +1,49 @@
+[
+  {
+    "Id":1,
+    "Name":"Ohm House",
+    "Type":"House",
+    "Price":12000,
+    "Image":"prop-1",
+    "SellRent":1
+  },
+  {
+    "Id":2,
+    "Name":"Mark House",
+    "Type":"House",
+    "Price":22000,
+    "Image":"prop-2",
+    "SellRent":2
+  },
+  {
+    "Id":3,
+    "Name":"Mike House",
+    "Type":"House",
+    "Price":10000,
+    "Image":"prop-3",
+    "SellRent":1
+  },
+  {
+    "Id":4,
+    "Name":"Off House",
+    "Type":"House",
+    "Price":19000,
+    "Image":"prop-4",
+    "SellRent":1
+  },
+  {
+    "Id":5,
+    "Name":"Gemini Mansion",
+    "Type":"House",
+    "Price":120000,
+    "Image":"prop-5",
+    "SellRent":2
+  },
+  {
+    "Id":6,
+    "Name":"Fourth House",
+    "Type":"House",
+    "Price":11000,
+    "SellRent":2
+  }
+]
