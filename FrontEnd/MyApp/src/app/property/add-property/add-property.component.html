@@ -50,19 +50,12 @@
                <br>
                 <div class="form-group col-12">
                   <label for="name">in Building/Society/Project</label>
-                  <!-- <input type="text" class="form-control" #propName="ngModel" ngModel name="Name" minlength="5" required [(ngModel)]="propertyView.Name" [ngModelOptions]="{standalone: true}"> -->
                   <input type="text" class="form-control" #propName  formControlName="Name" [(ngModel)]="propertyView.Name" >
                   <div class="error-block" *ngIf="Name.invalid && (Name.touched || nextClicked)" >
                     Please select building, society or project name.
                   </div>
-                  <!-- <span *ngIf="Name.invalid && Name.touched || nextClicked" class="error-block"> -->
-                      <!-- <span *ngIf="propName.hasError('required')">Please provide name</span>
-                      <span *ngIf="propName.hasError('minlength')">Name must be atleast 5 characters long</span> -->
-
-                    <!-- </span> -->
                 </div>
               <br>
-
               <div class="form-group col-12" >
                 <label >City</label>
                 <input type="text" class="form-control" formControlName="City" name="City" [(ngModel)]="propertyView.City"  >
@@ -71,12 +64,9 @@
                 </div>
               </div>
               <br>
-
               <button  type="button" class="btn btn-primary btn-block" (click)="selectTab(1,BasicInfo.valid)">Next</button>
-
             </tab>
             <tab heading="Pricing and Area" formGroupName="PriceInfo">
-            <!-- <br> -->
               <div class="form-group col-12" >
                 <label *ngIf="SellRent.value==1">Price(in INR) </label>
                 <label *ngIf="SellRent.value==2">Rent(in INR) </label>
@@ -85,16 +75,13 @@
                   Please select
                   <span *ngIf="SellRent.value==1;else ShowRent">price</span>
                     <ng-template #ShowRent>rent</ng-template>
-
-
-                </div>
+                  </div>
               </div>
               <div *ngIf="SellRent.value==2">
                 <div class="form-group col-12">
                   <label>Security(in INR)</label>
                   <input type="text" class="form-control" formControlName="Security">
                 </div>
-
                 <div class="form-group col-12">
                   <label>Maintenance</label>
                   <input type="text" class="form-control" formControlName="Maintenance">
@@ -107,7 +94,6 @@
                   Please select Built up area
                 </div>
               </div>
-
               <div class="form-group col-12">
                 <label>Carpet Area(in Sqr Feet)</label>
                 <input type="text" class="form-control" formControlName="CarpetArea">
@@ -122,13 +108,11 @@
                 <label>Floor</label>
                 <input type="text" class="form-control" formControlName="FloorNo">
               </div>
-
               <div class="form-group col-12">
                 <label>Total Floor</label>
                 <input type="text" class="form-control" formControlName="TotalFloor">
               </div>
-
-              <div class="form-group col-12">
+               <div class="form-group col-12">
                 <label>Address</label>
                 <input type="text" class="form-control" formControlName="Address">
                 <div class="error-block"
@@ -136,7 +120,6 @@
                   Please select address
                 </div>
               </div>
-
               <div class="form-group col-12">
                 <label>LandMark</label>
                 <input type="text" class="form-control" formControlName="LandMark">
@@ -148,44 +131,33 @@
             <tab heading="Other Details" formGroupName="OtherInfo">
               <div class="form-group col-12">
               <p>Ready to Move</p>
-
-                <div class="btn-group" btnRadioGroup formControlName="RTM">
-                  <label class="btn btn-outline-primary m-1" btnRadio=true tabindex="0" role="button" (click)="propertyView.RTM=true" name="RTM">Yes</label>
-                  <label class="btn btn-outline-primary m-1" btnRadio="false" tabindex="1" role="button" (click)="propertyView.RTM=false" name="RTM">No</label>
+              <div class="btn-group" btnRadioGroup formControlName="RTM">
+                <label class="btn btn-outline-primary m-1" btnRadio=true tabindex="0" role="button" (click)="propertyView.RTM=true" name="RTM">Yes</label>
+                <label class="btn btn-outline-primary m-1" btnRadio="false" tabindex="1" role="button" (click)="propertyView.RTM=false" name="RTM">No</label>
                 </div>
                 <div class="error-block" *ngIf="RTM.invalid && nextClicked">
                   Please select ready to move
                 </div>
               </div>
-
               <div class="form-group col-6">
                 <label  *ngIf="propertyView.RTM" type="text">Age of Property
-                <!-- <label *ngif="propertyView.RTM">Age of property</label> -->
                   <input type="text" class="form-control"  formControlName="AOP">
                 </label>
-                <!-- <label *ngIf="!propertyView.RTM">Possession From</label> -->
                 <label *ngIf="!propertyView.RTM">Possession From
-
-                <input type="text" formControlName="PossessionOn"  #possessionOn placeholder="Datepicker"  (bsValueChange)="propertyView.estPossession=possessionOn.value" class="form-control" bsDatepicker [bsConfig]="{containerClass:'theme-dark-blue',dateInputFormat: 'DD-MM-YYYY'}">
+                  <input type="text" formControlName="PossessionOn"  #possessionOn placeholder="Datepicker"  (bsValueChange)="propertyView.estPossession=possessionOn.value" class="form-control" bsDatepicker [bsConfig]="{containerClass:'theme-dark-blue',dateInputFormat: 'DD-MM-YYYY'}">
               </label>
                 <div class="error-block" *ngIf="PossessionOn.invalid && (nextClicked || PossessionOn.touched)">
                   Please select establishment/possession date
-                  <!-- <span *ngIf="RTM;else possessionOn">Age of Property</span>
-                  <ng-template #possessionOn> establishment/possession date</ng-template> -->
                 </div>
               </div>
               <br>
-
               <div class="form-group col-12">
                 <p>Gated Community</p>
                 <div class="btn-group" btnRadioGroup formControlName="Gated">
-
-
                   <label class="btn btn-outline-primary m-1" btnRadio=true role="button" name="Gated">Yes</label>
                   <label class="btn btn-outline-primary m-1" btnRadio=false role="button" name="Gated">No</label>
                 </div>
               </div>
-
               <div class="form-group col-12">
                 <p>Main Entrance</p>
                 <div class="btn-group" btnRadioGroup>
@@ -195,7 +167,6 @@
                   <label class="btn btn-outline-primary m-1" btnRadio=South role="button" name="Entrance">South</label>
                 </div>
               </div>
-
               <div class="form-group col-12">
                 <label>Description</label>
                 <textarea type="text" class="form-control" rows="6" formControlName="Description"></textarea>
@@ -220,11 +191,8 @@
               </tab>
           </tabset>
         </div>
-
-
-
       </form>
-        </div>
+    </div>
     </div>
   </div>
  </div>
@@ -235,7 +203,6 @@
     <div class="shadow-lg p-2 bg-white">
       <app-property-card [property]="propertyView" [hideIcons]="true"></app-property-card>
     </div>
-
- </div>
+  </div>
 </div>
 
