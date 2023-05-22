@@ -1,4 +1,4 @@
-export interface IProperty
+export interface IPropertyBase
 {
   Id:number,
   Name:string,
@@ -7,11 +7,9 @@ export interface IProperty
   BHK:number,
   BuiltArea:number,
   City:string,
-  // changed
   RTM:boolean,
   Price:number,
   Image?:string,
   SellRent:number,
-  // estPosession?:string
-  PossessionOn:string
+  estPossession?:string
 }

@@ -13,7 +13,15 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
-
+import { UserService } from './services/user.service';
+import { AlertifyService } from './services/alertify.service';
+import { AuthService } from './services/auth.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BsDropdownModule} from 'ngx-bootstrap/dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {TabsModule} from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker'
 const appRoutes:Routes=[
   {path:'',component:PropertyListComponent},
   {path:'rent-property',component:PropertyListComponent},
@@ -43,10 +51,19 @@ const appRoutes:Routes=[
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    NgbModule,
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserService,
+    AlertifyService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
